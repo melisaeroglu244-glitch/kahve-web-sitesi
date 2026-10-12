@@ -1,0 +1,516 @@
+:root{
+    color-scheme: light;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f1e8;
+    color:#2b1b12;
+}
+
+
+* {
+box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+}
+
+header,  main {
+    width: min(100%-32px, 110px);
+    margin-inline: auto;
+}
+
+header{
+    padding-block: 28px ;
+}
+
+header{
+    margin: 0;
+    color: #6f3e24;
+    font-size: 1.8rem;
+}
+
+header p {
+    margin-top: 8px;
+    color: #745c4d;
+}
+
+main {
+    padding-block: 72px;
+}
+
+main h2 {
+    margin-bottom: 12px;
+    font-size: clamp(2rem, 5vw,3.5 rem);
+}
+
+main p {
+    color:#745c4d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 24px;
+}
+
+.logo{ 
+    color: #6f3e24;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.site-header nav a {
+    color: #513727;
+    text-decoration: none;
+}
+
+.site-header nav a hover {
+    color: #a45f32;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+    min-height: 580px;
+    padding-block: 48px 80px;
+}
+
+.eyebrow {
+    color: #a45f32;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 16px 0;
+    color: #2b1b12;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.05;
+}
+
+.hero-description {
+    max-width: 440px;
+    color:#745c4d;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.button{
+    display: inline-block;
+    margin-top: 18px;
+    padding: 15px 22px;
+    border-radius: 999px;
+    background: #6f3e24;
+    color: #fffaf4;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.button :hover {
+    transform: translateY(-2px);
+    background: #8c512f;
+}
+
+.hero-visual {
+    position: relative;
+    display: grid;
+    min-height: 430px;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 48% 52% 44% 56%;
+    background: radial-gradient(ellipse at 50% 60%, #e7c79f 0, #e7c79f 23%, transparent 24% ),
+                linear-gradient(145deg, #f1dfc8, #d6aa7e);
+}
+
+.coffee-cup {
+    position: relative;
+    z-index: 1;
+    width: 210px;
+    height: 175px;
+    border:1px solid #eee1d2;
+    border-radius: 12% 12% 36% 36%;
+    background: linear-gradient(100deg, #fffaf2 0%, #e8d9c7 52%, #cbb59c 100%);
+    box-shadow: 18px 24px 30px rgb(65 37 20 / 22%),
+    inset 12px 0 18px rgb(255 255 255 / 75%),
+    inset -12px 0 18px rgb (97 64 39 / 12%);
+    transform: perspective(600px) rotateY(-16deg) rotateX(5deg);
+}
+
+.coffee {
+    position: absolute;
+    top: -10;
+    left: 7%;
+    width: 86%;
+    height: 34px;
+    border: 5px solid #f4e7d7;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #6b351c 0%, #3b1d12 72%);
+    box-shadow: inset 0 3px 5px rgb(255 255 255 / 18%);
+}
+
+.cup-handle {
+    position: absolute;
+    z-index: -1;
+    top: 36px;
+    right: -57px;
+    width: 78px;
+    height: 92px;
+    border: 17px solid #d4c1ab;
+    border-left-width: 12px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 7px 8px 12px rgb(65 37 20 / 12%);
+}
+
+.visual-caption {
+    position: absolute;
+    right: 20px;
+    bottom: 16px;
+    left: 20px;
+    color: #513727;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#kahveler,
+#hakkimizde,
+#iletişim {
+    padding-block: 48px;
+    border-top: 1px solid #e5d8c8;
+}
+
+
+#kahveler h2,
+#hakkimizde h2,
+#iletişim h2 {
+    color: #6f3e24;
+} 
+
+@media (max-width:700px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    
+    .site-header nav {
+        gap: 14px;     
+    }
+
+
+.hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 24px;
+}
+
+.hero-visual {
+    min-height: 340px;
+}
+
+.coffee-cup {
+    transform: perspective(600px) rotateY(-12deg) scale(0.852);
+  }
+}
+
+.menu-section { /* Kahve menüsü bölümünü seçer. */
+  padding-block: 48px; /* Bölümün üstüne ve altına 48 piksel iç boşluk ekler. */
+  text-align: center; /* Bölüm başlıklarını ve açıklamayı ortalar. */
+}
+
+.section-description { /* Menü başlığının altındaki açıklamayı seçer. */
+  max-width: 560px; /* Açıklamanın çok geniş bir satıra dönüşmesini engeller. */
+  margin: 12px auto 32px; /* Üstte 12, altta 32 piksel boşluk verir; auto sağ ve solu ortalar. */
+  color: #745c4d; /* Açıklama yazısını kahverengi yapar. */
+  line-height: 1.6; /* Satırlar arasında rahat okunacak boşluk bırakır. */
+}
+
+.menu-grid { /* Üç kahve kartını tutan kapsayıcıyı seçer. */
+  display: grid; /* Kartları ızgara düzeninde dizer. */
+  grid-template-columns: repeat(3, 1fr); /* Üç eşit genişlikte sütun oluşturur. */
+  gap: 20px; /* Kartlar arasında 20 piksel boşluk bırakır. */
+  margin-top: 32px; /* Kart grubunun üstüne 32 piksel boşluk ekler. */
+  text-align: left; /* Kart içindeki metinleri sola hizalar. */
+}
+
+.menu-card { /* Her bir kahve kartını seçer. */
+  padding: 28px; /* Kart içindeki kenarlardan 28 piksel boşluk bırakır. */
+  border: 1px solid #eadccd; /* Kart çevresine 1 piksel açık renk çizgi ekler. */
+  border-radius: 24px; /* Kart köşelerini 24 piksel yuvarlar. */
+  background: #fffaf4; /* Kartın arka planını krem rengi yapar. */
+  box-shadow: 0 12px 28px rgb(65 37 20 / 8%); /* Kartın altına hafif gölge verir; son değer gölgenin %8 opak olduğunu belirtir. */
+  transition: transform 180ms ease, box-shadow 180ms ease; /* Hareket ve gölge değişimini 180 milisaniyede yumuşatır. */
+}
+
+.menu-card:hover { /* Fare kartın üzerindeyken uygulanır. */
+  transform: translateY(-5px); /* Kartı 5 piksel yukarı kaldırır. */
+  box-shadow: 0 18px 34px rgb(65 37 20 / 14%); /* Üzerine gelindiğinde gölgeyi biraz belirginleştirir. */
+}
+
+.menu-category { /* Kartın kısa tür açıklamasını seçer. */
+  color: #a45f32; /* Tür açıklamasını tarçın rengi yapar. */
+  font-size: 0.8rem; /* Yazıyı temel boyutun 0,8 katına küçültür. */
+  font-weight: 700; /* Yazıyı kalın gösterir. */
+  letter-spacing: 0.08em; /* Harflerin arasına küçük bir aralık ekler. */
+  text-transform: uppercase; /* Harfleri ekranda büyük gösterir. */
+}
+
+.menu-card h3 { /* Karttaki kahve adını seçer. */
+  margin: 12px 0; /* Başlığın üstüne ve altına 12 piksel boşluk ekler. */
+  color: #2b1b12; /* Kahve adını koyu kahverengi yapar. */
+  font-size: 1.5rem; /* Başlığı temel yazı boyutunun 1,5 katı yapar. */
+}
+
+.menu-card > p:not(.menu-category):not(.menu-price) { /* Kartta tür ve fiyat olmayan açıklama paragrafını seçer. */
+  color: #745c4d; /* Açıklamayı yumuşak kahverengi gösterir. */
+  line-height: 1.6; /* Açıklama satırlarını rahat okunur hale getirir. */
+}
+
+.menu-price { /* Fiyat yazısını seçer. */
+  color: #6f3e24; /* Fiyatı marka kahverengisi yapar. */
+  font-size: 1.25rem; /* Fiyatı temel boyutun 1,25 katı yapar. */
+  font-weight: 700; /* Fiyatı kalın gösterir. */
+}
+
+.menu-link { /* Kartın iletişim bağlantısını seçer. */
+  color: #6f3e24; /* Bağlantıyı kahverengi yapar. */
+  font-weight: 700; /* Bağlantıyı kalınlaştırır. */
+  text-decoration-thickness: 1px; /* Bağlantı alt çizgisini 1 piksel kalınlığında yapar. */
+  text-underline-offset: 4px; /* Alt çizgiyle yazı arasında 4 piksel boşluk bırakır. */
+}
+
+@media (max-width: 700px) { /* Ekran 700 piksel veya daha dar olduğunda bu kuralı çalıştırır. */
+  .menu-grid { /* Mobil ekrandaki kart grubunu seçer. */
+    grid-template-columns: 1fr; /* Kartları tek sütunda, alt alta dizer. */
+  }
+}
+
+.about-section { /* class="about-section" olan Hakkımızda bölümünü seçer. */
+  max-width: 760px; /* Bölümün genişliğini en fazla 760 piksel tutar. */
+  margin-inline: auto; /* Sağ ve sol dış boşluğu eşitleyip bölümü ortalar. */
+  padding-block: 64px; /* Bölümün üstüne ve altına 64 piksel iç boşluk verir. */
+  text-align: center; /* Bölümdeki yazıları ortalar. */
+}
+
+.about-section h2 { /* Hakkımızda bölümünün ana başlığını seçer. */
+  margin: 12px 0 20px; /* Başlığın üstüne 12, altına 20 piksel boşluk ekler. */
+  color: #2b1b12; /* Başlığı koyu kahverengi yapar. */
+  font-size: clamp(2rem, 4vw, 3rem); /* Başlık ekran boyuna göre değişir; 2rem’den küçük ve 3rem’den büyük olmaz. */
+}
+
+.about-section > p:last-child { /* Bölümün en son paragrafını, yani tanıtım metnini seçer. */
+  max-width: 620px; /* Metin satırlarını en fazla 620 piksel genişliğinde tutar. */
+  margin-inline: auto; /* Metin bloğunu ortalar. */
+  color: #745c4d; /* Metni yumuşak kahverengi gösterir. */
+  font-size: 1.05rem; /* Metni temel yazı boyutunun 1,05 katı yapar. */
+  line-height: 1.8; /* Paragraf satırları arasını açarak okumayı kolaylaştırır. */
+}
+
+.contact-section { /* İletişim bölümünü seçer. */
+  padding-block: 64px; /* Bölümün üstüne ve altına 64 piksel iç boşluk verir. */
+  text-align: center; /* Başlıkları ve açıklamayı ortalar. */
+}
+
+.contact-form { /* Formun tamamını seçer. */
+  display: grid; /* Etiketleri, alanları ve düğmeyi ızgara düzenine dizer. */
+  gap: 12px; /* Form öğelerinin arasına 12 piksel boşluk koyar. */
+  max-width: 520px; /* Formun 520 pikselden fazla genişlemesini engeller. */
+  margin: 32px auto 0; /* Üstte 32 piksel boşluk bırakır, auto ile formu ortalar. */
+  text-align: left; /* Form etiketlerini ve alanlarını sola hizalar. */
+}
+
+.contact-form label { /* Form etiketlerini seçer. */
+  color: #513727; /* Etiketleri koyu kahverengi yapar. */
+  font-weight: 700; /* Etiket yazılarını kalın gösterir. */
+}
+
+.contact-form input, /* Formdaki metin ve e-posta alanlarını seçer. */
+.contact-form textarea { /* Çok satırlı mesaj alanını da aynı kurallara dahil eder. */
+  width: 100%; /* Alanı formun tüm genişliğine yayar. */
+  padding: 13px 14px; /* Alanın içinde üst-alt 13, sağ-sol 14 piksel boşluk bırakır. */
+  border: 1px solid #d8c6b2; /* Çevresine 1 piksel açık kahverengi çizgi ekler. */
+  border-radius: 12px; /* Köşeleri 12 piksel yuvarlar. */
+  background: #fffaf4; /* Alanın arka planını krem rengi yapar. */
+  color: #2b1b12; /* Yazılan metni koyu kahverengi gösterir. */
+  font: inherit; /* Yazı tipini ve boyutunu sayfanın genelinden alır. */
+}
+
+.contact-form textarea { /* Yalnızca mesaj alanını seçer. */
+  resize: vertical; /* Ziyaretçinin alanı sadece yukarı-aşağı büyütmesine izin verir. */
+}
+
+.contact-form input:focus, /* Kullanıcı metin alanına tıklayıp yazarken onu seçer. */
+.contact-form textarea:focus { /* Kullanıcı mesaj alanına tıklayıp yazarken onu seçer. */
+  outline: 2px solid #a45f32; /* Aktif alanın çevresine 2 piksel tarçın rengi odak çizgisi çizer. */
+  border-color: #a45f32; /* Aktif alanın kenarlığını da tarçın rengine çevirir. */
+}
+
+.contact-form .button { /* Formun içindeki gönder düğmesini seçer. */
+  justify-self: start; /* Düğmeyi formun soluna hizalar. */
+  border: 0; /* Tarayıcının düğmeye eklediği varsayılan kenarlığı kaldırır. */
+  font: inherit; /* Düğme yazısının sayfanın genel yazı tipini kullanmasını sağlar. */
+  cursor: pointer; /* Fare düğmenin üstündeyken el imleci gösterir. */
+}
+
+.form-status { /* JavaScript’in oluşturduğu durum mesajını seçer. */
+  margin: 8px 0 0; /* Üste 8 piksel boşluk bırakır; yan ve alt boşluğu sıfırlar. */
+  padding: 12px; /* Mesajın çevresinde 12 piksel iç boşluk oluşturur. */
+  border-radius: 10px; /* Mesaj kutusunun köşelerini 10 piksel yuvarlar. */
+  background: #e9f2e5; /* Mesaj kutusuna açık yeşil arka plan verir. */
+  color: #315b32; /* Mesaj yazısını koyu yeşil yapar. */
+  line-height: 1.5; /* Mesaj satırları arasını okunaklı tutar. */
+}
+
+.site-footer { /* Sayfanın alt bölümünü seçer. */
+  display: flex; /* Logo, açıklama ve üst bağlantısını esnek düzende dizer. */
+  align-items: center; /* Bu öğeleri dikey yönde ortalar. */
+  justify-content: space-between; /* Öğelerin arasındaki boşluğu dağıtır. */
+  gap: 16px; /* Öğeler arasında en az 16 piksel boşluk bırakır. */
+  margin-top: 48px; /* Footer’ın üstünde 48 piksel dış boşluk oluşturur. */
+  padding: 28px max(16px, calc((100% - 1100px) / 2)); /* Üst-alt 28 piksel; yanlarda en az 16 piksel ve geniş ekranda içerikle aynı hizada boşluk bırakır. */
+  border-top: 1px solid #e5d8c8; /* Footer’ın üstüne ince ayırıcı çizgi ekler. */
+  background: #f1e7da; /* Alt bölüme açık kahve tonlu arka plan verir. */
+}
+
+.site-footer p { /* Footer’daki kısa marka mesajını seçer. */
+  margin: 0; /* Paragrafın varsayılan dış boşluğunu kaldırır. */
+  color: #745c4d; /* Mesajı yumuşak kahverengi yapar. */
+}
+
+.back-to-top { /* Sayfa başına dön bağlantısını seçer. */
+  color: #6f3e24; /* Bağlantıyı marka kahverengisi yapar. */
+  font-weight: 700; /* Bağlantı yazısını kalınlaştırır. */
+  text-decoration: none; /* Alt çizgiyi kaldırır. */
+}
+
+.back-to-top:hover { /* Fare bağlantının üzerindeyken uygulanır. */
+  text-decoration: underline; /* Üzerine gelindiğinde alt çizgi gösterir. */
+}
+
+@media (max-width: 700px) { /* Ekran 700 piksel veya daha dar olduğunda çalışır. */
+  .site-footer { /* Mobil görünümde footer’ı seçer. */
+    align-items: flex-start; /* Öğeleri sola hizalar. */
+    flex-direction: column; /* Öğeleri alt alta dizer. */
+    padding: 24px 16px; /* Üst-alt 24, sağ-sol 16 piksel iç boşluk verir. */
+  }
+}
+
+.hero-visual::before, /* Görsel alanının içine HTML eklemeden ilk dekoratif şekli oluşturur. */
+.hero-visual::after { /* Aynı temel şekil kurallarını ikinci dekoratif şekle de uygular. */
+  content: ""; /* before ve after şekillerinin oluşturulmasını sağlar. */
+  position: absolute; /* Şekilleri görsel alanına göre konumlandırır. */
+  width: 58px; /* Çekirdek şeklini 58 piksel genişliğinde yapar. */
+  height: 38px; /* Çekirdek şeklini 38 piksel yüksekliğinde yapar. */
+  border-radius: 50%; /* Oval çekirdek biçimi oluşturur. */
+  background: /* Çekirdeğin üzerinde renk ve orta çizgiyi bir araya getirir. */
+    linear-gradient(110deg, transparent 46%, #d7a47b 48% 52%, transparent 54%), /* Ortadaki kıvrımlı yarığı taklit eden açık renk çizgi oluşturur. */
+    radial-gradient(ellipse at 35% 30%, #9a5932, #4b2415 75%); /* Üst-sol tarafı aydınlık, kenarları koyu kahverengi yaparak hacim hissi verir. */
+  box-shadow: 8px 10px 18px rgb(65 37 20 / 22%); /* Çekirdeğin altına sağa/aşağı kaymış, yumuşak ve %22 opak gölge ekler. */
+}
+
+.hero-visual::before { /* İlk çekirdeğin konum ve açısını belirler. */
+  top: 18%; /* Görsel alanının üstünden %18 aşağı yerleştirir. */
+  right: 16%; /* Sağ kenardan alan genişliğinin %16’sı kadar içeride konumlandırır. */
+  transform: rotate(-28deg); /* Çekirdeği -28 derece döndürür. */
+}
+
+.hero-visual::after { /* İkinci çekirdeğin konum, boyut ve açısını belirler. */
+  bottom: 22%; /* Görsel alanının altından %22 yukarı yerleştirir. */
+  left: 14%; /* Sol kenardan alan genişliğinin %14’ü kadar içeride konumlandırır. */
+  transform: rotate(35deg) scale(0.78); /* Çekirdeği 35 derece döndürüp normal boyutunun %78’ine küçültür. */
+}
+
+a:focus-visible, /* Klavyeyle seçildiğinde bağlantılara uygulanır. */
+button:focus-visible, /* Klavyeyle seçildiğinde düğmelere uygulanır. */
+input:focus-visible, /* Klavyeyle seçildiğinde yazı alanlarına uygulanır. */
+textarea:focus-visible { /* Klavyeyle seçildiğinde mesaj alanına uygulanır. */
+  outline: 3px solid #a45f32; /* Seçili öğenin çevresine 3 piksel kalınlığında renkli çizgi çizer. */
+  outline-offset: 3px; /* Çizgi ile öğe arasında 3 piksel boşluk bırakır. */
+}
+
+html { /* Sayfanın tamamını seçer. */
+  scroll-behavior: smooth; /* Menü bağlantısıyla başka bir bölüme gidince kaydırmayı yumuşatır. */
+}
+
+@media (prefers-reduced-motion: reduce) { /* Cihazda hareket azaltma tercihi açık olduğunda çalışır. */
+  html { /* Sayfanın kaydırma ayarını seçer. */
+    scroll-behavior: auto; /* Hareket hassasiyeti olan kişiler için anlık kaydırmaya döner. */
+  }
+}
+
+.contact-details { /* İletişim bilgilerinin tamamını seçer. */
+  margin: 28px auto 0; /* Üste 28 piksel boşluk bırakır ve grubu yatayda ortalar. */
+  color: #745c4d; /* Bilgi yazılarını yumuşak kahverengi yapar. */
+  line-height: 1.8; /* Bilgi satırları arasında rahat okunacak boşluk bırakır. */
+}
+
+.contact-details p { /* Bilgi grubundaki her paragrafı seçer. */
+  margin: 4px 0; /* Her satırın üstüne ve altına 4 piksel boşluk ekler. */
+}
+
+.contact-details strong { /* Telefon, e-posta gibi kalın etiketleri seçer. */
+  color: #513727; /* Etiket rengini koyu kahverengi yapar. */
+}
+
+
+.page-steam { /* Buharı ana görsel alanının üst kısmına yerleştirir. */
+  position: absolute; /* Buharı hero-visual alanına göre konumlandırır. */
+  z-index: 2; /* Buharı görsel alanının önünde gösterir. */
+  top: 18px; /* Görsel alanının üstünden 18 piksel aşağı yerleştirir. */
+  left: 50%; /* Grubun ortasını alanın ortasına getirir. */
+  width: 210px; /* Buhar grubunu 210 piksel genişliğinde yapar. */
+  height: 95px; /* Buhar grubunu 95 piksel yüksekliğinde yapar. */
+  transform: translateX(-50%); /* Grubu kendi genişliğinin yarısı kadar sola alarak ortalar. */
+  pointer-events: none; /* Buharın fare tıklamalarını engellemesini önler. */
+}
+
+.page-steam { /* Buhar çizim alanını ana görselin üstüne yerleştirir. */
+  position: absolute; /* Konumu hero-visual alanına göre belirler. */
+  z-index: 0; /* Buharı fincanın arkasında tutar. */
+  top: 12px; /* Görsel alanının üstünden 12 piksel aşağı yerleştirir. */
+  left: 50%; /* Buharı yatayda ortalar. */
+  width: 154px; /* Buhar çizim alanının genişliğini belirler. */
+  height: 94px; /* Buhar çizim alanının yüksekliğini belirler. */
+  overflow: visible; /* Çizgilerin SVG alanının sınırında kesilmesini önler. */
+  transform: translateX(-50%); /* Genişliğinin yarısı kadar sola kaydırıp tam ortalar. */
+  pointer-events: none; /* Dekoratif çizimlerin tıklamaları engellemesini önler. */
+}
+
+.page-steam path { /* SVG içindeki her kıvrımlı çizgiyi seçer. */
+  fill: none; /* Çizgilerin içini boş bırakır. */
+  stroke: #fffaf4; /* Çizgileri fincan paletine uygun açık krem yapar. */
+  stroke-width: 7px; /* Buhar çizgilerini 7 piksel kalınlığında yapar. */
+  stroke-linecap: round; /* Çizgilerin uçlarını yuvarlar. */
+  opacity: 0.78; /* Çizgileri hafif saydam gösterir. */
+  filter: blur(1px); /* Kenarları yalnızca 1 piksel yumuşatır. */
+}
+
+.coffee-saucer { /* Fincanın altındaki tabağı seçer. */
+  position: absolute; /* Tabağı görsel alanına göre konumlandırır. */
+  z-index: 0; /* Tabağı fincanın arkasında gösterir. */
+  top: 68%; /* Tabağı görsel alanının üstünden %68 aşağı yerleştirir. */
+  left: 50%; /* Tabağı yatayda ortalar. */
+  width: 270px; /* Tabağı fincandan daha geniş yapar. */
+  height: 58px; /* Tabağı yassı oval biçiminde yapar. */
+  border: 1px solid #e8d7c2; /* Tabağın kenarına ince, açık kahverengi çizgi ekler. */
+  border-radius: 50%; /* Dikdörtgeni oval tabağa dönüştürür. */
+  background: radial-gradient(ellipse, #fffaf2 0% 52%, #d6c4ad 55% 66%, #eee1d2 68% 100%); /* Açık merkez ve koyu halka ile tabak kenarı görünümü verir. */
+  box-shadow: 0 18px 24px rgb(65 37 20 / 16%); /* Tabağın altına yumuşak gölge ekler. */
+  transform: translateX(-50%) rotate(-4deg); /* Tabağı ortalar ve hafifçe döndürür. */
+}
